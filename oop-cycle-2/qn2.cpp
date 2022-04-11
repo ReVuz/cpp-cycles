@@ -25,39 +25,37 @@ public:
 	}
 };
 void complex::display(void) {
-	if(imag>0){
+	if (imag > 0) {
 		cout << real << " + " << imag << "j" << endl;
 	}
-	else if(imag<0){
+	else if (imag < 0) {
 		cout << real << " " << imag << "j" << endl;
 	}
 	else
-		cout<<real<<endl;
+		cout << real << endl;
 }
 int main() {
-	int num,ans;
+	int num, ans;
 	complex c1, c2, c3;
+	cout << "\nEnter values of first complex number : ";
+	c1.getdata();
+	cout << "Enter values of second complex number : ";
+	c2.getdata();
 	do {
 		cout << "\tComplex Numbers Operations \n\nAvailable Operations : "
 			<< "\n1. Addition \n2. Multiplication \n3. Exit "
 			<< "\nChoose any number from above : ";
 		cin >> num;
-		if (num == 1 or num == 2) {
-			cout << "\nEnter values of first complex number : ";
-			c1.getdata();
-			cout << "Enter values of second complex number : ";
-			c2.getdata();
-		}
 		if (num == 1) {
 			c3 = c1 + c2;
 			cout << "\n\tAddition\n";
-			cout << "   "; c1.display(); 
+			cout << "   "; c1.display();
 			cout << " + "; c2.display(); cout << " = "; c3.display();
 		}
 		else if (num == 2) {
 			c3 = c1 * c2;
 			cout << "\n\tMultiplication\n";
-			cout << "   "; c1.display(); cout << " * "; c2.display();cout<<" = "; c3.display();
+			cout << "   "; c1.display(); cout << " * "; c2.display(); cout << " = "; c3.display();
 		}
 		else {
 			break;
@@ -65,6 +63,6 @@ int main() {
 		cout << "Do you want to continue ?(1/0) ";
 		cin >> ans;
 	} while (ans);
-		cout << "Thank you";
+	cout << "Thank you";
 	return 0;
 }
