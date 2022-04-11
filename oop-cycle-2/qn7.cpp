@@ -14,11 +14,10 @@ public:
 	}
 };
 class beta {
-	double p;
+	float p;
 public:
-	beta(double a)
+	beta(float a) :p(a)
 	{
-		p = a;
 		cout << "\nBeta constructed succesfully" << endl;
 	}
 	void show_beta(void) {
