@@ -1,67 +1,65 @@
 #include <iostream>
 using namespace std;
-class student {
+class A {
 protected:
-	int r_no;
+	int x;
 public:
-	void get_num(int a) {
-		r_no = a;
+	void get_x(int a) {
+		x = a;
 	}
-	void put_num(void) {
-		cout << "\n\nDetails : \n\tRoll number : " << r_no << endl;
+	void put_x(void) {
+		cout << "Base Class A: \nx = " << x << endl;
 	}
 };
-class test : public student {
+class B : public A {
 protected:
-	float mark1, mark2;
+	int y;
 public:
-	void get_marks(float x, float y) {
-		mark1 = x; mark2 = y;
+	void get_y(int b) {
+		y = b;
 	}
-	void put_marks(void) {
-		cout << "\nMarks Obtained : " << "\n\n";
-		cout << "\tEnglish : " << mark1 << "\n";
-		cout << "\tEVS : " << mark2 << "\n";
+	void put_y(void) {
+		cout << "Derived class B: \ny = " << y << endl;
 	}
 };
-class sports{
+class C {
 protected:
-	float score;
+	int z;
 public:
-	void get_score(float s) {
-		score = s;
+	void get_z(int s) {
+		z = s;
 	}
-	void put_score(void) {
-		cout << "\tSports : " << score << "\n\n";
+	void put_z(void) {
+		cout << "\nHybrid class C: \nz = " << z << "\n\n";
 	}
 };
-class result : public test, public sports {
-	float total;
+class D : public B, public C {
+	int total;
 public:
 	void display(void) {
-		total = mark1 + mark2;
-		put_num();
-		put_marks();
-		put_score();
-		cout << "\nTotal Marks : " << total << "/200" << "\n";
+		total = x + y;
+		put_x();
+		put_y();
+		put_z();
+		cout << "\nDerived Class D: \nx+y = " << total << "\n";
 	};
 };
 
 int main()
 {
-	result details;
-	cout << "\nEnter roll number of student: ";
+	D details;
+	cout << "\nEnter value for x: ";
 	int r;
 	cin >> r;
-	details.get_num(r);
-	cout << "\nEnter Marks in English and EVS(float): ";
-	float eng, evs;
-	cin >> eng >> evs;
-	details.get_marks(eng, evs);
-	cout << "\nEnter score in sports(float): ";
-	float Score;
-	cin >> Score;
-	details.get_score(Score);
+	details.get_x(r);
+	cout << "\nEnter value for y: ";
+	int y;
+	cin >> y;
+	details.get_y(y);
+	cout << "\nEnter value for z: ";
+	int z;
+	cin >> z;
+	details.get_z(z);
 	details.display();
 	return 0;
 }
