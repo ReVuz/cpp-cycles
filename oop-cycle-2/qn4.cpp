@@ -4,9 +4,9 @@ class matrix {
 	int** p;
 	int row, col;
 public:
-	matrix(){};
+	matrix() {};
 	matrix(int r, int c);
-	void getdata(){
+	void getdata() {
 		cout << "Enter elements of matrix row by row : \n";
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
@@ -19,7 +19,7 @@ public:
 	void display() {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				cout << p[i][j]<<" ";
+				cout << p[i][j] << " ";
 			}
 			cout << endl;
 		}
@@ -57,42 +57,43 @@ matrix matrix::operator*(matrix a) {
 }
 int main() {
 	int ans, num;
+	int r1, c1, r2, c2;
+	cout << "Enter number of rows and coloumns for first matrix : ";
+	cin >> r1 >> c1;
+	matrix A(r1, c1);
+	A.getdata();
+	cout << "Enter number of rows and coloumns for second matrix : ";
+	cin >> r2 >> c2;
+	matrix B(r2, c2);
+	B.getdata();
 	do {
 		cout << "\tMatrix Operations \n1. Addition \n2. Multiplication \n3. Exit \nEnter any option : ";
 		cin >> num;
-		if (num != 3) {
-			int r1, c1, r2, c2;
-			cout << "Enter number of rows and coloumns for first matrix : ";
-			cin >> r1 >> c1;
-			matrix A(r1, c1);
-			A.getdata();
-			cout << "Enter number of rows and coloumns for second matrix : ";
-			cin >> r2 >> c2;
-			matrix B(r2, c2);
-			B.getdata();
-			if (num == 1) {
-				if (r1 == r2 && c1 == c2) {
-					matrix C(r1, c1);
-					C = A + B;
-					cout << "Addition of the two matrices gives : " << endl;
-					C.display();
+		if (num == 1) {
+			if (r1 == r2 && c1 == c2) {
+				matrix C(r1, c1);
+				C = A + B;
+				cout << "Addition of the two matrices gives : " << endl;
+				C.display();
 
-				}
-				else {
-					cout << "Addition not possible !!!" << endl;
-				}
 			}
-			else if (num == 2) {
-				if (c1 == r2) {
-					matrix D(r2, c1);
-					D = A * B;
-					cout << "Multiplication of the two matrices gives : " << endl;
-					D.display();
-				}
-				else {
-					cout << "Multiplication not possible !!!" << endl;
-				}
+			else {
+				cout << "Addition not possible !!!" << endl;
 			}
+		}
+		else if (num == 2) {
+			if (c1 == r2) {
+				matrix D(r2, c1);
+				D = A * B;
+				cout << "Multiplication of the two matrices gives : " << endl;
+				D.display();
+			}
+			else {
+				cout << "Multiplication not possible !!!" << endl;
+			}
+		}
+		else {
+			break;
 		}
 		cout << "Do you want to continue ?(1/0) ";
 		cin >> ans;
