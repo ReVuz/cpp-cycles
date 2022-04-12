@@ -12,8 +12,12 @@ public:
 	void getitem(string a,int b,float c,int d){itemname=a;
 	itemcode=b;itemprice=c;itemquantity=d;}
 	void displayitems(void)
-	{cout << itemname << "\t" << itemcode << "\t" <<itemquantity<<"\t\t"<<itemprice
-	<< endl;}
+	{
+	if(itemquantity != 0){
+	cout << itemname << "\t" << itemcode << "\t" <<itemquantity<<"\t\t"<<itemprice
+	<< endl;
+	}
+	}
 	int getcode(void){
 	return itemcode;
 	}
@@ -68,8 +72,8 @@ do
 
 			cout << "Enter item quantity : ";
 			cin >> quantity;
+			list[cont].getitem(name,code,price,quantity);
 			cont+=1;
-			list[i].getitem(name,code,price,quantity);
 		}
 		}
 		else if(choice == 2){
@@ -115,7 +119,7 @@ do
 					cin >> q;
 					if(q<=list[j].getquantity()){
 						list[j].changequantity(2,q);
-						}
+					}
 					else{
 					cout<<"Item Out of Stock"<<endl;
 					}
