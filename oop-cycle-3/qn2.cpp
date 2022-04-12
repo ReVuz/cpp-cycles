@@ -9,10 +9,10 @@ class calc
 public:
 	void get_num(void)
 	{
-	cout << "Enter First number : ";
-	cin >>a;
-	cout<<"Enter Second number: ";
-	cin>>b;
+		cout << "Enter First number : ";
+		cin >> a;
+		cout << "Enter Second number: ";
+		cin >> b;
 	}
 	T sum(void) { return(a + b); }
 	T subtraction(void) { return(a - b); }
@@ -30,21 +30,24 @@ public:
 
 int main()
 {
-	int ans,c1;
+	calc <int>calc1;
+	cout << "Integer Values" << endl;
+	calc1.get_num();
+	calc <float> calc2;
+	cout << "Float Values" << endl;
+	calc2.get_num();
+	int ans, c1;
+	do{
 	cout << "\n\tClass Templates\n";
 	cout << "Enter the type of data you are going to enter : \n1. Integer \n2. Float \n3. Exit\n";
 	cin >> c1;
-	do
-	{
 		if (c1 == 1) {
 			int sm, sub, mlt, div;
 			int c2;
-			calc <int>calc1;
 			cout << "\nInteger Operations \nAvailable options : ";
 			cout << "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\nChoose any option : ";
 			cin >> c2;
-			cout<<"\n";
-                        calc1.get_num();
+			cout << "\n";
 			if (c2 == 1)
 			{
 				sm = calc1.sum();
@@ -65,7 +68,7 @@ int main()
 				div = calc1.division();
 				cout << "Quotient : " << div << endl;
 			}
-			else if(c2==5)
+			else if (c2 == 5)
 			{
 				break;
 			}
@@ -78,12 +81,10 @@ int main()
 		{
 			float sm, sub, mlt, div;
 			int c2;
-			calc <float> calc2;
 			cout << "\nFloat Operations\nAvailable options : ";
 			cout << "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\nChoose any option : ";
 			cin >> c2;
-			cout<<"\n";
-			calc2.get_num();
+			cout << "\n";
 			if (c2 == 1)
 			{
 				sm = calc2.sum();
@@ -104,7 +105,7 @@ int main()
 				div = calc2.division();
 				cout << "Quotient : " << div << endl;
 			}
-			else if(c2==5)
+			else if (c2 == 5)
 			{
 				break;
 			}
@@ -120,7 +121,7 @@ int main()
 		cin >> ans;
 
 	} while (ans);
-	cout << "Thank You"<<endl;
+	cout << "Thank You" << endl;
 	return 0;
 
 }
