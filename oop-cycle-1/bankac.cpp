@@ -88,34 +88,34 @@ int main()
 		for(int i=0;i<ct+1;i++){
 			if(account[i].ac_num()==ac_no){
 				number=i;
+				flag=1;
 				break;
 
 			}
-			else
-			{
-			flag = 1;
-			cout<<"Account not found "<<endl;
-			break;
-			}
+
 		}
-		
+		if(flag==0)
+		{
+		cout<<"Account not found "<<endl;
+		break;
+		}
 	}
 	
-		if (!flag && num==3)
+		if (flag && num==3)
 		{
 			cout<<"Please enter deposite amount : " << endl;
 			float dp;
 			cin >> dp;
 			account[number].deposit(dp);
 		}
-		if (!flag && num == 2) {
+		if (flag && num == 2) {
 			account[number].withdraw();
 		}
-		if (!flag && num == 5) {
+		if (flag && num == 5) {
 			cout << " Details of the Account Holder :" << endl << endl;
 			account[number].ac_statement();
 		}
-		if (!flag && num == 4) {
+		if (flag && num == 4) {
 			account[number].balance();
 		}
 		cout << "\nDo you want to continue ?(1/0) ";
