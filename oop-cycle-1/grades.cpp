@@ -29,17 +29,20 @@ int students::calcgrade(void){
 	if (d >= 90) {
 		cout << "Grade: A" << endl;
 	}
-	if (d >= 80 && d < 90) {
+	else if (d >= 80 && d < 90) {
 		cout << "Grade: B" << endl;
 	}
-	if (d >= 70 && d < 80) {
+	else if (d >= 70 && d < 80) {
 		cout << "Grade: C" << endl;
 	}
-	if (d >= 60 && d < 70) {
+	else if (d >= 60 && d < 70) {
 		cout << "Grade: D" << endl;
 	}
-	if (d >= 40 && d < 50) {
+	else if (d >= 50 && d < 60) {
 		cout << "Grade: E" << endl;
+	}
+	else {
+		cout << "Grade : F" << endl;
 	}
 	return d;
 }
