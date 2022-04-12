@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-class A {
+class car_bike {
 protected:
 	int x;
 public:
@@ -8,10 +8,10 @@ public:
 		x = a;
 	}
 	void put_x(void) {
-		cout << "Base Class A: \nx = " << x << endl;
+		cout << "\n//Base Class1 \nprice of car : " << x << endl;
 	}
 };
-class B : public A {
+class vehicle : public car_bike {
 protected:
 	int y;
 public:
@@ -19,10 +19,10 @@ public:
 		y = b;
 	}
 	void put_y(void) {
-		cout << "Derived class B: \ny = " << y << endl;
+		cout << "//Derived class \nPrice of bike : " << y << endl;
 	}
 };
-class C {
+class fuel {
 protected:
 	int z;
 public:
@@ -30,10 +30,10 @@ public:
 		z = s;
 	}
 	void put_z(void) {
-		cout << "\nHybrid Base class C: \nz = " << z << "\n\n";
+		cout << "\n//Base class2 \nDiesel/Petrol price: \nz = " << z << "\n\n";
 	}
 };
-class D : public B, public C {
+class Total : public fuel, public vehicle {
 	int total;
 public:
 	void display(void) {
@@ -41,22 +41,22 @@ public:
 		put_x();
 		put_y();
 		put_z();
-		cout << "\nDerived Class D: \nx+y = " << total << "\n";
+		cout << "\n//Child Class \nTotal price : " << total << "\n";
 	};
 };
 
 int main()
 {
-	D details;
-	cout << "\nEnter value for x: ";
+	Total details;
+	cout << "\nEnter price of any car : ";
 	int r;
 	cin >> r;
 	details.get_x(r);
-	cout << "\nEnter value for y: ";
+	cout << "\nEnter price of any bike : ";
 	int y;
 	cin >> y;
 	details.get_y(y);
-	cout << "\nEnter value for z: ";
+	cout << "\nEnter diesel or petrol expenses : ";
 	int z;
 	cin >> z;
 	details.get_z(z);
