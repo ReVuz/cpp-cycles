@@ -27,7 +27,7 @@ void show(complex c) {
 		cout << c.x << " + " << c.y << "j" << endl;
 	}
 	else if(c.y<0){
-		cout << c.x << " - " << c.y << "j" << endl;
+		cout << c.x << " " << c.y << "j" << endl;
 	}
 	else
 		cout<<c.x<<endl;
