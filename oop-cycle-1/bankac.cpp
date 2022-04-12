@@ -1,5 +1,4 @@
 #include <iostream>
-#include<iomanip>
 using namespace std;
 class bank {
 	char name[20],typ[15];
