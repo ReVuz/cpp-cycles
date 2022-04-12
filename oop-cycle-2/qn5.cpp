@@ -30,7 +30,7 @@ public:
 		z = s;
 	}
 	void put_z(void) {
-		cout << "\nHybrid class C: \nz = " << z << "\n\n";
+		cout << "\nHybrid Base class C: \nz = " << z << "\n\n";
 	}
 };
 class D : public B, public C {
