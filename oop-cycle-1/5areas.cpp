@@ -22,22 +22,22 @@ int main() {
 		cin >> a;
 		cout << "Area of circle: " << area(a)<<endl;
 		}
-		if (num==2){
+		else if (num==2){
 		cout << "Enter Length and breadth of rectangle ";
 		cin >> l >> b;
 		cout<< "Area of rectangle: " << area(l, b)<< endl;
 		}
-		if(num==3){ 
+		else if(num==3){ 
 		cout << "Enter Length,breadth and height of cuboid ";
 		cin >> c >> f >> h;
 		cout<< "Area of cuboid: "<< area(c, f, h) << endl;
 		}
-		if (num==4){
+		else if (num==4){
 		cout << "Enter Radius and height of cylinder ";
 		cin >> w >> r;
 		cout<< "Area of cylinder: " << area(w, r)<< endl;
 		} 
-		if(num==5){
+		else if(num==5){
 		cout<<"Base and height of triangle ";
 		cin >> i >> x;
 		cout<< "Area of triangle: " << area(i, x) << endl;
