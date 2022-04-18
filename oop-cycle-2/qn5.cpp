@@ -37,7 +37,7 @@ class Total : public fuel, public vehicle {
 	int total;
 public:
 	void display(void) {
-		total = x + y;
+		total = x + y+z;
 		put_x();
 		put_y();
 		put_z();
