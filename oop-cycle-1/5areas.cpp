@@ -43,6 +43,7 @@ int main() {
 		cout<< "Area of triangle: " << area(i, x) << endl;
 		}
 		else
+			cout<<"Thank You ";
 			break;
 		cout<<"Do you want to continue?(1/0) ";
 		cin>>ans;
