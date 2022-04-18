@@ -17,13 +17,7 @@ public:
 	T sum(void) { return(a + b); }
 	T subtraction(void) { return(a - b); }
 	T multiply(void) { return(a * b); }
-	T division(void) {
-		if (b != 0)
-			return(a / b);
-		else {
-			cout << "\nDivision by zero not possible\n";
-		}
-	}
+	T division(void) {return(a / b);}
 
 };
 
